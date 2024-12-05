@@ -7,12 +7,32 @@ Pritaikykite savo sukurtą funkciją ir išspausdinkite atitikmenį
 doleriais.
 */
 
+const usdEurExchangeRate = 0.95;
+
+function eurosToDollars(euros) {
+    return Math.round(euros / usdEurExchangeRate * 100) / 100;
+}
+
+const euros = Math.floor(Math.random() * 1000) + 1;
+console.log("1");
+console.log(`${euros} EUR = ${eurosToDollars(euros)} USD`);
+console.log();
+
 /*
 2. Sukurkite funkciją, kuri paverstų dolerius į eurus.
 Sugeneruokite atsitiktinį skaičių (dolerių sumą) nuo 1 iki 1000.
 Pritaikykite savo sukurtą funkciją ir išspausdinkite atitikmenį
 eurais.
 */
+
+function dollarsToEuros(dollars) {
+    return Math.round(dollars * 100 * usdEurExchangeRate) / 100;
+}
+
+const dollars = Math.floor(Math.random() * 1000) + 1;
+console.log("2");
+console.log(`${dollars} USD = ${dollarsToEuros(dollars)} EUR`);
+console.log();
 
 /*
 3. Parašykite programą, kuri suskaičiuotų žmogaus BMI (body
