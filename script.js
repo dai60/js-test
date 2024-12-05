@@ -146,6 +146,25 @@ console.log();
 8. Parašykite kodą, kuris apskaičiuos kiek liko dienų iki Kalėdų.
 */
 
+function daysUntilChristmas() {
+    const date = new Date();
+    if (date.getMonth() === 11 && date.getDate() === 25) {
+        return 0;
+    }
+
+    const xmas = new Date(date.getFullYear(), 11, 25);
+    if (date > xmas) {
+        xmas.setFullYear(xmas.getFullYear() + 1);
+    }
+
+    const day = 24 * 60 * 60 * 1000;
+    return Math.ceil((xmas - date) / day);
+}
+
+console.log("8");
+console.log(`iki Kaledu liko ${daysUntilChristmas()} dienu`);
+console.log();
+
 /*
 9. Parašykite kodą, kuris apjungia masyvo duomenis į vieną
 tekstinę eilutę. Turėtumėte gauti tokį rezultatą:
