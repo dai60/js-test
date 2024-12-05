@@ -90,6 +90,19 @@ console.log();
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
 */
 
+function fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * (5 / 9);
+}
+
+function celsiusToFahrenheit(celsius) {
+    return celsius * (9 / 5) + 32;
+}
+
+const f = 77;
+console.log("5");
+console.log(`${f}F = ${fahrenheitToCelsius(f)}C = ${celsiusToFahrenheit(fahrenheitToCelsius(f))}F`);
+console.log();
+
 /*
 6. Sukurkite kodą, kuris išspausdins į konsolę
 1-2-3-4-5-6-7-8-9-10 vienoje eilutėje. Prieš vienetą ir po
