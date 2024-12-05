@@ -130,6 +130,18 @@ console.log();
 *****
 */
 
+function triangle() {
+    let stars = "";
+    for (let i = 0; i < 5; i++) {
+        stars += "*";
+        console.log(stars);
+    }
+}
+
+console.log("7");
+triangle();
+console.log();
+
 /*
 8. Parašykite kodą, kuris apskaičiuos kiek liko dienų iki Kalėdų.
 */
