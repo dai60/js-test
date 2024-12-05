@@ -172,6 +172,27 @@ Tomas,Dainius,Paulius,Jonas
 Tomas+Dainius+Paulius+Jonas
 */
 
+function join(array, separator) {
+    let string = "";
+    if (array.length === 0) {
+        return string;
+    }
+
+    for (let i = 0; i < array.length - 1; i++) {
+        string += array[i];
+        string += separator;
+    }
+    string += array[array.length - 1];
+    return string;
+}
+
+const names = ["Tomas", "Dainius", "Paulius", "Jonas"];
+
+console.log("9");
+console.log(join(names, ","));
+console.log(join(names, "+"));
+console.log();
+
 /*
 10. Parašykite kodą, kuris sugeneruos dvylikos simbolių
 slaptažodį. Slaptažodyje privalo būti bent po vieną: didžioji raidė,
