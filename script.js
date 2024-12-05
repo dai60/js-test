@@ -73,6 +73,18 @@ pasakytų kiek tai yra sekundėmis, minutėmis, valandomis,
 dienomis.
 */
 
+function logAge(years) {
+    const days = years * 365.25;
+    const hours = days * 24;
+    const minutes = hours * 60;
+    const seconds = minutes * 60;
+    console.log(`${years} metai yra ${days} dienomis / ${hours} valandomis / ${minutes} minutemis / ${seconds} sekundemis`);
+}
+
+console.log("4");
+logAge(1);
+console.log();
+
 /*
 5. Parašykite programą, kuri konvertuos termometro
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
