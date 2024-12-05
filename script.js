@@ -109,6 +109,18 @@ console.log();
 dešimties neturėtų būti brūkšniuko.
 */
 
+function numberLine() {
+    const numbers = [];
+    for (let i = 1; i <= 10; i++) {
+        numbers.push(i);
+    }
+    return numbers.join("-");
+}
+
+console.log("6");
+console.log(numberLine());
+console.log();
+
 /*
 7. Panaudokite for ciklus, kad sukurtumėte tokį vaizdą konsolėje.
 *
