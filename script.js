@@ -45,6 +45,28 @@ Normalu = 18.5 <= BMI < 25
 Per mažas svoris = BMI < 18.5
 */
 
+function calculateBMI(weight, height) {
+    return weight / (height ** 2);
+}
+
+const weight = 80;
+const height = 1.8;
+const bmi = calculateBMI(weight, height);
+
+console.log("3");
+console.log(`svoris = ${weight}kg, ugis = ${height}m`);
+console.log(`BMI = ${bmi}`);
+if (bmi > 25) {
+    console.log("virssvoris");
+}
+else if (bmi >= 18.5) {
+    console.log("normalu");
+}
+else {
+    console.log("per mazas svoris");
+}
+console.log();
+
 /*
 4. Parašykite programą, kuri iš duoto žmogaus amžiaus metais
 pasakytų kiek tai yra sekundėmis, minutėmis, valandomis,
