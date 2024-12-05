@@ -199,3 +199,49 @@ slaptažodį. Slaptažodyje privalo būti bent po vieną: didžioji raidė,
 mažoji raidė, skaičius, specialusis simbolis. Visi slaptažodžio
 simboliai privalo būti atsitiktiniai ir atsitiktine tvarka.
 */
+
+function generateUppercase() {
+    return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+}
+function generateLowercase() {
+    return String.fromCharCode(97 + Math.floor(Math.random() * 26));
+}
+function generateDigit() {
+    return Math.floor(Math.random() * 10).toString();
+}
+function generateSymbol() {
+    const symbols = `!"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~`;
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+function generatePassword() {
+    let password = [generateUppercase(), generateLowercase(), generateDigit(), generateSymbol()];
+
+    for (let i = password.length; i < 12; i++) {
+        switch (Math.floor(Math.random() * 4)) {
+            case 0:
+                password.push(generateUppercase());
+                break;
+            case 1:
+                password.push(generateLowercase());
+                break;
+            case 2:
+                password.push(generateDigit());
+                break;
+            case 3:
+                password.push(generateSymbol());
+                break;
+        }
+    }
+
+    for (let i = password.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [password[i], password[j]] = [password[j], password[i]];
+    }
+
+    return password.join("");
+}
+
+console.log("10");
+console.log(generatePassword());
+console.log();
