@@ -9,13 +9,13 @@ doleriais.
 
 const usdEurExchangeRate = 0.95;
 
-function eurosToDollars(euros) {
+function eurosToDollars(euros, usdEurExchangeRate) {
     return Math.round(euros / usdEurExchangeRate * 100) / 100;
 }
 
 const euros = Math.floor(Math.random() * 1000) + 1;
 console.log("1");
-console.log(`${euros} EUR = ${eurosToDollars(euros)} USD`);
+console.log(`${euros} EUR = ${eurosToDollars(euros, usdEurExchangeRate)} USD`);
 console.log();
 
 /*
@@ -25,13 +25,13 @@ Pritaikykite savo sukurtą funkciją ir išspausdinkite atitikmenį
 eurais.
 */
 
-function dollarsToEuros(dollars) {
+function dollarsToEuros(dollars, usdEurExchangeRate) {
     return Math.round(dollars * 100 * usdEurExchangeRate) / 100;
 }
 
 const dollars = Math.floor(Math.random() * 1000) + 1;
 console.log("2");
-console.log(`${dollars} USD = ${dollarsToEuros(dollars)} EUR`);
+console.log(`${dollars} USD = ${dollarsToEuros(dollars, usdEurExchangeRate)} EUR`);
 console.log();
 
 /*
@@ -49,6 +49,18 @@ function calculateBMI(weight, height) {
     return weight / (height ** 2);
 }
 
+function bmiInfo(bmi) {
+    if (bmi > 25) {
+        return "virssvoris";
+    }
+    else if (bmi >= 18.5) {
+        return "normalu";
+    }
+    else {
+        return "per mazas svoris";
+    }
+}
+
 const weight = 80;
 const height = 1.8;
 const bmi = calculateBMI(weight, height);
@@ -56,15 +68,7 @@ const bmi = calculateBMI(weight, height);
 console.log("3");
 console.log(`svoris = ${weight}kg, ugis = ${height}m`);
 console.log(`BMI = ${bmi}`);
-if (bmi > 25) {
-    console.log("virssvoris");
-}
-else if (bmi >= 18.5) {
-    console.log("normalu");
-}
-else {
-    console.log("per mazas svoris");
-}
+console.log(bmiInfo());
 console.log();
 
 /*
@@ -73,16 +77,18 @@ pasakytų kiek tai yra sekundėmis, minutėmis, valandomis,
 dienomis.
 */
 
-function logAge(years) {
+function calculateAge(years) {
     const days = years * 365.25;
     const hours = days * 24;
     const minutes = hours * 60;
     const seconds = minutes * 60;
-    console.log(`${years} metai yra ${days} dienomis / ${hours} valandomis / ${minutes} minutemis / ${seconds} sekundemis`);
+    return { years, days, hours, minutes, seconds };
 }
 
+const age = calculateAge(1);
+
 console.log("4");
-logAge(1);
+console.log(`${age.years} metai yra ${age.days} dienomis / ${age.hours} valandomis / ${age.minutes} minutemis / ${age.seconds} sekundemis`);
 console.log();
 
 /*
@@ -132,14 +138,16 @@ console.log();
 
 function triangle() {
     let stars = "";
+    const triangle = [];
     for (let i = 0; i < 5; i++) {
         stars += "*";
-        console.log(stars);
+        triangle.push(stars);
     }
+    return triangle.join("\n");
 }
 
 console.log("7");
-triangle();
+console.log(triangle());
 console.log();
 
 /*
